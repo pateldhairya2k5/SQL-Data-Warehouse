@@ -26,11 +26,6 @@ CREATE TABLE IF NOT EXISTS bronze.crm_cust_info (
     cst_create_date     DATE
 );
 
-COPY bronze.crm_cust_info
-FROM 'C:\sql-data-warehouse-project\sql-data-warehouse-project\datasets\source_crm\cust_info.csv'
-DELIMITER ','
-CSV HEADER;
-
 -------------------------------------------------------------
 -- CRM Product Information
 -------------------------------------------------------------
@@ -43,11 +38,6 @@ CREATE TABLE IF NOT EXISTS bronze.crm_prd_info (
     prd_start_dt    DATE,
     prd_end_dt      DATE
 );
-
-COPY bronze.crm_prd_info
-FROM 'C:\sql-data-warehouse-project\sql-data-warehouse-project\datasets\source_crm\prd_info.csv'
-DELIMITER ','
-CSV HEADER;
 
 -------------------------------------------------------------
 -- CRM Sales Details
@@ -64,10 +54,6 @@ CREATE TABLE IF NOT EXISTS bronze.crm_sales_details (
     sls_price       NUMERIC(10,2)
 );
 
-COPY bronze.crm_sales_details
-FROM 'C:\sql-data-warehouse-project\sql-data-warehouse-project\datasets\source_crm\sales_details.csv'
-DELIMITER ','
-CSV HEADER;
 
 -------------------------------------------------------------
 -- ERP Customer Information
@@ -78,10 +64,6 @@ CREATE TABLE IF NOT EXISTS bronze.erp_cust_az12 (
     gen     VARCHAR(10)
 );
 
-COPY bronze.erp_cust_az12
-FROM 'C:\sql-data-warehouse-project\sql-data-warehouse-project\datasets\source_erp\CUST_AZ12.csv'
-DELIMITER ','
-CSV HEADER;
 
 -------------------------------------------------------------
 -- ERP Location Information
@@ -90,11 +72,6 @@ CREATE TABLE IF NOT EXISTS bronze.erp_loc_a101 (
     cid     VARCHAR(20),
     cntry   VARCHAR(100)
 );
-
-COPY bronze.erp_loc_a101
-FROM 'C:\sql-data-warehouse-project\sql-data-warehouse-project\datasets\source_erp\LOC_A101.csv'
-DELIMITER ','
-CSV HEADER;
 
 -------------------------------------------------------------
 -- ERP Product Category Information
@@ -106,8 +83,4 @@ CREATE TABLE IF NOT EXISTS bronze.erp_px_cat_g1v2 (
     maintenance    VARCHAR(10)
 );
 
-COPY bronze.erp_px_cat_g1v2
-FROM 'C:\sql-data-warehouse-project\sql-data-warehouse-project\datasets\source_erp\PX_CAT_G1V2.csv'
-DELIMITER ','
-CSV HEADER;
 
