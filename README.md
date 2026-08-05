@@ -180,58 +180,45 @@ These analyses provide stakeholders with meaningful metrics to support informed 
 
 For additional information, refer to **docs/requirements.md**.
 
-
-
 ## 📂 Repository Structure
 
-
-
 ```text
-
-data-warehouse-project/
-
+SQL-Data-Warehouse/
 │
-
-├── datasets/                           # ERP and CRM source datasets
-
+├── datasets/                           # Source datasets
+│   ├── source_crm/                     # CRM source data
+│   │   ├── cust_info.csv
+│   │   ├── prd_info.csv
+│   │   └── sales_details.csv
+│   │
+│   └── source_erp/                     # ERP source data
+│       ├── CUST_AZ12.csv
+│       ├── LOC_A101.csv
+│       ├── PX_CAT_G1V2.csv
+│       └── placeholder
 │
-
-├── docs/                               # Project documentation
-
-│   ├── etl.drawio                      # ETL workflow diagrams
-
-│   ├── data_architecture.drawio        # Data warehouse architecture
-
+├── documents/                          # Project documentation and diagrams
 │   ├── data_catalog.md                 # Data dictionary and metadata
-
-│   ├── data_flow.drawio                # Data flow diagrams
-
-│   ├── data_models.drawio              # Star schema design
-
-│   ├── naming_conventions.md           # Naming standards
-
+│   ├── data_flow.png                   # ETL data flow diagram
+│   ├── data_integration.png            # Data integration architecture
+│   ├── data_model.png                  # Star schema data model
+│   ├── data_pipeline_architecture.png  # End-to-end data warehouse architecture
+│   └── placeholder
 │
-
-├── scripts/                            # SQL scripts
-
-│   ├── bronze/                         # Raw data ingestion
-
-│   ├── silver/                         # Data cleansing and transformation
-
-│   ├── gold/                           # Analytical model creation
-
+├── scripts/                            # SQL scripts for ETL and modeling
+│   ├── bronze/                         # Raw data ingestion scripts
+│   ├── silver/                         # Data cleansing and transformation scripts
+│   ├── gold/                           # Business-ready dimensional model scripts
+│   └── init_db.sql                     # Database initialization script
 │
-
-├── tests/                              # Data validation scripts
-
+├── tests/                              # Data quality validation scripts
+│   ├── qualitycheck_Silver.SQL
+│   └── qualitycheck_gold.SQL
 │
-
-├── README.md
-
-├── LICENSE
-
-├── .gitignore
-
-└── requirements.txt
-
+├── README.md                           # Project overview and documentation
+├── LICENSE                             # License information
+└── .gitignore                          # Git ignored files
 ```
+
+
+
